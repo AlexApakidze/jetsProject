@@ -1,0 +1,5 @@
+Raptor,Bald Eagle,150,140,14
+Raptor,Falcon,240,200,3.3
+Corvid,Raven,48,100,4.4
+Corvid,Crow,60,40,1.4
+Pheasant,Chicken,9,5,10
