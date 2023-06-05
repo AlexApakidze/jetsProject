@@ -69,29 +69,39 @@ public class BirdPark {
 	public void pickFastest() {
 		long fastestSpeed = 0;
 		Bird fastestBird = null;
-		for (Bird bird : birds) {
-			if (bird.getSpeed() > fastestSpeed) {
-				fastestSpeed = bird.getSpeed();
-				fastestBird = bird;
+		try {
+			for (Bird bird : birds) {
+				if (bird.getSpeed() > fastestSpeed) {
+					fastestSpeed = bird.getSpeed();
+					fastestBird = bird;
+				}
+
+				System.out.println("The " + fastestBird.getBirdType() + " is the fastest bird in the park. \n"
+						+ "Its top speed is " + fastestBird.getSpeed() + "mph!");
 			}
+		} catch (NullPointerException e) {
+			System.out.println("That rock is probably the fastest thing in this park");
 		}
-		System.out.println("The " + fastestBird.getBirdType() + " is the fastest bird in the park. \n"
-				+ "Its top speed is " + fastestBird.getSpeed() + "mph!");
 	}
 
 	public void pickLongestRange() {
 
 		int longestRange = 0;
 		Bird maxDistanceBird = null;
-		for (Bird bird : birds) {
-			if (bird.getRange() > longestRange) {
-				longestRange = bird.getRange();
-				maxDistanceBird = bird;
+
+		try {
+			for (Bird bird : birds) {
+				if (bird.getRange() > longestRange) {
+					longestRange = bird.getRange();
+					maxDistanceBird = bird;
+				}
+				System.out.println("The " + maxDistanceBird.getBirdType()
+						+ " can fly the furthest distance out of all the birds in the park. \n" + "It can fly "
+						+ maxDistanceBird.getRange() + " miles in one day!");
 			}
+		} catch (NullPointerException e) {
+			System.out.println("Looks like a leaf can go the furthest");
 		}
-		System.out.println("The " + maxDistanceBird.getBirdType()
-				+ " can fly the furthest distance out of all the birds in the park. \n" + "It can fly "
-				+ maxDistanceBird.getRange() + " miles in one day!");
 	}
 
 	public void useToolbox() {
